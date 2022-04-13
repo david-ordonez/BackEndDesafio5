@@ -6,7 +6,7 @@ const PORT = 8080;
 const app = express();
 const productosApi = new ProductosApi();
 
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', '../views');
 app.use(express.static('../public'));
 
