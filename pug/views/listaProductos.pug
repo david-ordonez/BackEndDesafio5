@@ -20,7 +20,7 @@ html
                       tr
                         th(scpe='row') #{item.id}
                         td #{item.title}
-                        td #{item.price}
+                        td #{new Intl.NumberFormat('es-MX',{ style: 'currency', currency: 'MXN' }).format(item.price)}
                         td
                           img(width='50', src=item.thumbnail, alt=item.title, title=item.title)
           else 

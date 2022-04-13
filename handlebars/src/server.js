@@ -13,7 +13,12 @@ app.engine(
         extname: '.hbs',
         defaultLayout: 'index.hbs',
         layoutsDir: '../views/layouts',
-        partialsDir: '../views/partials'
+        partialsDir: '../views/partials',
+        helpers: { 
+            currencyFormat(price) {
+                return new Intl.NumberFormat('es-MX',{ style: 'currency', currency: 'MXN' }).format(price);
+            }
+        }
     })
 );
 
