@@ -1,0 +1,30 @@
+<section class="jumbotron">
+  <h1>Vista de Productos</h1>
+
+  {{#if productosExists }}
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-light">
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Foto</th>
+      </thead>
+      <tbody>
+        {{#each productos}}
+        <tr>
+          <th scope="row">{{ this.id}}</th>
+          <td>{{ this.title }}</td>
+          <td>{{ this.price }}</td>
+          <td><img width="50" src="{{this.thumbnail }}" alt="{{this.title}}" title="{{this.title}}"></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+  <h3 class="alert alert-warning">No se encontraron productos</h3>
+  {{/if}}
+  <br>
+  <a href="/" type="button" class="btn btn-primary ">Cargar un nuevo producto</a>
+</section>
